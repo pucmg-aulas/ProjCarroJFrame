@@ -4,6 +4,7 @@ import model.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -37,7 +38,7 @@ public class Carros extends AbstractDAO implements Serializable{
     
     public void addCarro(Carro carro){
         this.carros.add(carro);
-        persisteCarro(carro);
+        grava();
     }
 
     private void carregaCarros(){
@@ -45,7 +46,7 @@ public class Carros extends AbstractDAO implements Serializable{
         carros = super.leitura(localArquivo);
     }
     
-    private void persisteCarro(Carro carro){
+    private void grava(){
         super.grava(localArquivo, carros);
     }
 
@@ -53,5 +54,46 @@ public class Carros extends AbstractDAO implements Serializable{
         return carros;
     }
     
+    public void excluirCarro(Carro carro){
+        
+        carros.remove(carro);
+        grava();
+    }
     
+    public Carro buscarCarroPorNome(String nome){
+        
+        for (Carro carro : carros) {
+            if(carro.getNome().equals(nome)){
+                return carro;
+            }
+        }
+        return null;
+    }
+    
+    public boolean altera(Carro carroExistente, String nomeAnterior){
+        
+        try {
+
+            ArrayList<Carro> listaTemp = new ArrayList<Carro>();
+
+            for (Iterator<Carro> it = carros.iterator(); it.hasNext();) {
+                Carro carro = it.next();
+                if (!carro.getNome().equals(nomeAnterior)) {
+                    listaTemp.add(carro);
+
+                } else {
+                    listaTemp.add(carroExistente);
+                }
+            }
+
+            carros.removeAll(carros);
+            carros.addAll(listaTemp);
+            grava();
+
+            return true;
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

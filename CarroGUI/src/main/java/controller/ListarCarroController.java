@@ -7,6 +7,7 @@ package controller;
 import dao.Carros;
 import model.Carro;
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import view.ListarCarroView;
 
@@ -26,7 +27,9 @@ public class ListarCarroController {
         
         carregaTabela();
         
-        
+        this.view.getBtnExcluir().addActionListener((e) -> {
+            excluirCarro();
+        });
         
         this.view.getBtnVoltar().addActionListener((e) -> {
             sair();
@@ -53,5 +56,27 @@ public class ListarCarroController {
             tm.addRow(new Object[]{linha[0], linha[1]});
         }
         view.getTbCarros().setModel(tm);
+    }
+    
+    private void excluirCarro(){
+        
+        if(view.getTbCarros().getSelectedRow() != -1){
+            
+            int linha = this.view.getTbCarros().getSelectedRow();
+            String nome = (String) this.view.getTbCarros().getValueAt(linha, 0);
+            
+            int op = JOptionPane.showConfirmDialog(view, "Deseja excluir " + nome + "?");
+            if(op == JOptionPane.YES_OPTION){
+                Carro carro = carros.buscarCarroPorNome(nome);
+                carros.excluirCarro(carro);
+                JOptionPane.showMessageDialog(view, nome + "Excluído com Sucesso!");
+                //carregaTabela();
+            }
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(view, "Selecione uma linha primeiro!");
+        }
+ 
     }
 }
