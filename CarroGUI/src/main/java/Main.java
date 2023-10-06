@@ -1,11 +1,10 @@
+
+import com.pucminas.pm.guijava.dao.Carros;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.pucminas.pm.guijava;
-
-import com.pucminas.pm.guijava.controller.IncluirCarroController;
-import com.pucminas.pm.guijava.dao.Carros;
 
 
 /**

@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.pucminas.pm.guijava.controller;
 
 import com.pucminas.pm.guijava.dao.Carros;
 import com.pucminas.pm.guijava.model.Carro;
