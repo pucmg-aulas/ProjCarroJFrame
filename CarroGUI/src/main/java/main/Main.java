@@ -1,5 +1,9 @@
+package main;
 
-import com.pucminas.pm.guijava.dao.Carros;
+
+import controller.IncluirCarroController;
+import controller.ListarCarroController;
+import dao.Carros;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -109,7 +113,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuBtnActionPerformed
 
     private void viewCarsMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCarsMenuBtnActionPerformed
-        // TODO add your handling code here:
+        new ListarCarroController();
     }//GEN-LAST:event_viewCarsMenuBtnActionPerformed
 
     /**

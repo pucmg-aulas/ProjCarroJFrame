@@ -1,14 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.pucminas.pm.guijava.model;
+package model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author danil
  */
-public class Carro {
+// Precisamos implementar a interface Serializable 
+public class Carro implements Serializable{
     
     private String nome;
     private String marca;
@@ -33,7 +32,9 @@ public class Carro {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return nome + "%" + marca;
+    }
 }

@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.pucminas.pm.guijava.view;
+package view;
+
+import javax.swing.JButton;
+import javax.swing.JTable;
 
 /**
  *
@@ -17,6 +20,27 @@ public class ListarCarroView extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtnEditar() {
+        return btnEditar;
+    }
+
+    public JButton getBtnExcluir() {
+        return btnExcluir;
+    }
+
+    public JButton getBtnVoltar() {
+        return btnVoltar;
+    }
+
+    public JTable getTbCarros() {
+        return tbCarros;
+    }
+
+    public void setTbCarros(JTable tbCarros) {
+        this.tbCarros = tbCarros;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,8 +51,8 @@ public class ListarCarroView extends javax.swing.JFrame {
     private void initComponents() {
 
         btnVoltar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbCarros = new javax.swing.JTable();
 
@@ -36,9 +60,9 @@ public class ListarCarroView extends javax.swing.JFrame {
 
         btnVoltar.setText("Voltar");
 
-        jButton2.setText("Editar");
+        btnEditar.setText("Editar");
 
-        jButton3.setText("Excluir");
+        btnExcluir.setText("Excluir");
 
         tbCarros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,9 +87,9 @@ public class ListarCarroView extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 123, Short.MAX_VALUE)
-                        .addComponent(jButton3)
+                        .addComponent(btnExcluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnVoltar)))
                 .addContainerGap())
@@ -78,8 +102,8 @@ public class ListarCarroView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnEditar)
+                    .addComponent(btnExcluir))
                 .addContainerGap())
         );
 
@@ -91,9 +115,9 @@ public class ListarCarroView extends javax.swing.JFrame {
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbCarros;
     // End of variables declaration//GEN-END:variables

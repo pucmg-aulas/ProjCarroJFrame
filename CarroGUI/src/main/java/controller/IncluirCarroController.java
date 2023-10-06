@@ -1,11 +1,13 @@
+package controller;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-import com.pucminas.pm.guijava.dao.Carros;
-import com.pucminas.pm.guijava.model.Carro;
-import com.pucminas.pm.guijava.view.AddCarroView;
+import dao.Carros;
+import model.Carro;
+import view.*;
 import javax.swing.JOptionPane;
 
 
