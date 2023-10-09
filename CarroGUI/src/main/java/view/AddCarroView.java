@@ -16,6 +16,7 @@ public class AddCarroView extends javax.swing.JFrame {
     /**
      * Creates new form AddCarroView
      */
+    
     public AddCarroView() {
         initComponents();
     }

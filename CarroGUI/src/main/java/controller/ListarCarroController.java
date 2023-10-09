@@ -70,7 +70,7 @@ public class ListarCarroController {
                 Carro carro = carros.buscarCarroPorNome(nome);
                 carros.excluirCarro(carro);
                 JOptionPane.showMessageDialog(view, nome + "Excluído com Sucesso!");
-                //carregaTabela();
+                carregaTabela();
             }
             
         }
