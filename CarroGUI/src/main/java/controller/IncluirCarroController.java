@@ -48,7 +48,9 @@ public class IncluirCarroController {
         
         JOptionPane.showMessageDialog(view, "Carro salvo com sucesso!");
         
-        this.view.dispose();
+        //this.view.dispose();
+        
+        limparTela();
         
     }
 
@@ -56,6 +58,11 @@ public class IncluirCarroController {
         this.view.dispose();
     }
     
+    private void limparTela(){
+        
+        this.view.getTxtNomeCarro().setText("");
+        this.view.getTxtMarcaCarro().setText("");
+    }
     
     
     
