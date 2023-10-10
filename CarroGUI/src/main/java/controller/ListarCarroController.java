@@ -35,6 +35,10 @@ public class ListarCarroController {
             sair();
         });
         
+        this.view.getBtnEditar().addActionListener((e) -> {
+            editar();
+        });
+        
         this.view.setVisible(true);
         
     }
@@ -69,7 +73,7 @@ public class ListarCarroController {
             if(op == JOptionPane.YES_OPTION){
                 Carro carro = carros.buscarCarroPorNome(nome);
                 carros.excluirCarro(carro);
-                JOptionPane.showMessageDialog(view, nome + "Excluído com Sucesso!");
+                JOptionPane.showMessageDialog(view, nome + " Excluído com Sucesso!");
                 carregaTabela();
             }
             
@@ -78,5 +82,9 @@ public class ListarCarroController {
             JOptionPane.showMessageDialog(view, "Selecione uma linha primeiro!");
         }
  
+    }
+
+    private void editar() {
+        JOptionPane.showInternalMessageDialog(view, "Não implementado ainda!");
     }
 }

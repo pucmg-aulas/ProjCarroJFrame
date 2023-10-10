@@ -43,7 +43,7 @@ public class Carros extends AbstractDAO implements Serializable{
 
     private void carregaCarros(){
         
-        carros = super.leitura(localArquivo);
+        this.carros = super.leitura(localArquivo);
     }
     
     private void grava(){

@@ -32,9 +32,10 @@ public class IncluirCarroController {
             cancelar();
         });
         
+        this.view.setTitle("Cadastrar Carro");
         
         this.view.setVisible(true);
-       
+        
     }
     
     public void addCarro(){
