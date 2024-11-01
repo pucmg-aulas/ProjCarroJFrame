@@ -41,14 +41,20 @@ public class IncluirCarroView extends javax.swing.JFrame {
 
         jLabel1.setText("Nome");
 
+        txtNomeCarro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeCarroActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Marca");
 
         btnSalvar.setText("Salvar");
 
         btnCancelar.setText("Cancelar");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -86,6 +92,10 @@ public class IncluirCarroView extends javax.swing.JFrame {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNomeCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCarroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeCarroActionPerformed
 
     public JToggleButton getBtnCancelar() {
         return btnCancelar;

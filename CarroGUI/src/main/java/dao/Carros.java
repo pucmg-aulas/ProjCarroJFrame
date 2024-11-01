@@ -12,12 +12,12 @@ import java.util.List;
  * @author danil
  */
 //Esta classe utiliza o método já implementado para armazenar e recuperar os arquivos serializados
-public class Carros extends AbstractDAO implements Serializable{
+public class Carros extends AbstractDAO {
 
     private List<Carro> carros;
     // Atributo da própria classe, estático, para implementar o Singleton
     private static Carros instance;
-    
+
     //Endereço do arquivo serializado que contém a coleção de carros
     private final String localArquivo = "./src/main/java/data/Carros.dat";
 
@@ -35,43 +35,43 @@ public class Carros extends AbstractDAO implements Serializable{
         }
         return instance;
     }
-    
-    public void addCarro(Carro carro){
+
+    public void addCarro(Carro carro) {
         this.carros.add(carro);
         grava();
     }
 
-    private void carregaCarros(){
-        
-        this.carros = super.leitura(localArquivo);
+    private void grava() {
+        super.gravar(localArquivo, carros);
     }
-    
-    private void grava(){
-        super.grava(localArquivo, carros);
+
+    private void carregaCarros() {
+
+        this.carros = super.recuperar(localArquivo);
     }
 
     public List<Carro> getCarros() {
         return carros;
     }
-    
-    public void excluirCarro(Carro carro){
-        
+
+    public void excluirCarro(Carro carro) {
+
         carros.remove(carro);
         grava();
     }
-    
-    public Carro buscarCarroPorNome(String nome){
-        
+
+    public Carro buscarCarroPorNome(String nome) {
+
         for (Carro carro : carros) {
-            if(carro.getNome().equals(nome)){
+            if (carro.getNome().equals(nome)) {
                 return carro;
             }
         }
         return null;
     }
-    
-    public boolean altera(Carro carroExistente, String nomeAnterior){
-        
+
+    public boolean altera(Carro carroExistente, String nomeAnterior) {
+
         try {
 
             ArrayList<Carro> listaTemp = new ArrayList<Carro>();

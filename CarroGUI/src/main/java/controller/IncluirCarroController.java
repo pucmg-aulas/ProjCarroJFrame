@@ -17,12 +17,12 @@ import javax.swing.JOptionPane;
  */
 public class IncluirCarroController {
     
-    private AddCarroView view;
+    private IncluirCarroView view;
     private Carros carros;
 
     public IncluirCarroController() {
         this.carros = Carros.getInstance();
-        this.view = new AddCarroView();
+        this.view = new IncluirCarroView();
         
         this.view.getBtnSalvar().addActionListener((e) -> {
             addCarro();
@@ -43,6 +43,7 @@ public class IncluirCarroController {
         String nome = view.getTxtNomeCarro().getText();
         String marca = view.getTxtMarcaCarro().getText();
         
+        //TODO: incluir validação
         Carro c = new Carro(nome, marca);
         
         carros.addCarro(c);
